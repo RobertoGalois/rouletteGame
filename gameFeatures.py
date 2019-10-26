@@ -28,17 +28,13 @@ def	game(p_userMoney):
 	print("Nouvelle partie de Roulette !")
 	print("Vous disposez de", p_userMoney, "$ !")
 
-	while (True):
+	while (bet > p_userMoney or bet <= 0):
 		bet = atoi(input("Combien misez-vous: "))
 
 		if (bet > p_userMoney):
 			print("Vous n'avez pas assez d'argent pour effectuer une telle mise !")
-			continue
 		elif (bet <= 0):
 			print("Vous devez indiquer une somme strictement positive !")
-			continue
-		else:
-			break
 
 	while (chosenNumber < 0 or chosenNumber > 49):
 		chosenNumber = atoi(input("Choisissez un nombre entre 0 et 49: "))

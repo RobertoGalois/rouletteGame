@@ -11,10 +11,13 @@ def main():
 	userMoney = 500
 
 	gameMsgs.welcomeMsg()
-	while (userMoney > 0):
-		userMoney = gameFeatures.game(userMoney)
-
-	gameMsgs.goodbyeMsg()
+	try:
+		while (userMoney > 0):
+			userMoney = gameFeatures.game(userMoney)
+	except KeyboardInterrupt:
+		gameMsgs.goodbyeCancelMsg(userMoney)
+	else:
+		gameMsgs.goodbyeMsg()
 
 #end main()
 
